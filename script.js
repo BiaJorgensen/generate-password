@@ -16,10 +16,12 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
     const a = prompt ("Choose a password lenght from 8 to 128 characters");
     if (a<8) {
-      alert ("Please choose a password lenght higher than 8")
+      alert ("Please choose a password lenght higher than 8");
+      generatePassword();
     }
     else if (a>128) {
-      alert ("Please choose a password lenght lower than 128")
+      alert ("Please choose a password lenght lower than 128");
+      generatePassword();
     }
     else {
       criteria ()
