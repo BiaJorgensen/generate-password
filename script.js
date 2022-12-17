@@ -17,7 +17,10 @@ var testing = [];
 
 function generatePassword() {
     const a = prompt ("Choose a password lenght from 8 to 128 characters");
-    if (a<8) {
+    if (a === null) {
+      return;
+    }
+    else if (a<8) {
       alert ("Please choose a password lenght higher than 8");
       generatePassword();
     }
@@ -32,22 +35,22 @@ function generatePassword() {
 
 function criteria () {
   
-    const b = confirm ("Would you like to include lowercase in your password?");
+    const b = confirm ("Click 'OK' if you would like to include lowercase in your password");
     if (b) {
       testing.push ("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
       console.log(testing);
     }
-    const c = confirm ("Would you like to include upercase in your password?");
+    const c = confirm ("Click 'OK' if you would to include upercase in your password");
     if (c) {
       testing.push ("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
       console.log(testing);
     }
-    const d = confirm ("Would you like to include numbers in your password?");
+    const d = confirm ("Click 'OK' if you would to include numbers in your password");
     if (d) {
       testing.push (0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
       console.log (testing);
     }
-    const e = confirm ("Would you like to include special characters in your password?");
+    const e = confirm ("Click 'OK' if you would to include special characters in your password");
     if (e) {
       testing.push ('!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '_', '`', '{', '|', '}', '~');
       console.log(testing);
