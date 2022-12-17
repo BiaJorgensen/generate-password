@@ -14,9 +14,11 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 var testing = [];
+var a = [];
 
 function generatePassword() {
-    const a = prompt ("Choose a password lenght from 8 to 128 characters");
+    a = prompt ("Choose a password lenght from 8 to 128 characters");
+    console.log(a);
     if (a === null) {
       return;
     }
@@ -33,8 +35,8 @@ function generatePassword() {
     }
 }
 
+
 function criteria () {
-  
     const b = confirm ("Click 'OK' if you would like to include lowercase in your password");
     if (b) {
       testing.push ("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
@@ -55,13 +57,14 @@ function criteria () {
       testing.push ('!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '_', '`', '{', '|', '}', '~');
       console.log(testing);
     }
+    shuffle(testing);
+    console.log(testing);
    
-
-
-  
   }
 
-
+  function shuffle(testing) {
+    testing.sort(() => Math.random() - 0.5);
+  }
  
   
 
