@@ -59,7 +59,8 @@ function criteria () {
     }
     shuffle(testing);
     console.log(testing);
-   
+    testing = [];
+    console.log(testing);
   }
 
   function shuffle(testing) {
