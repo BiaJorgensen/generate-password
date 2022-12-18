@@ -5,6 +5,10 @@ var generateBtn = document.querySelector("#generate");
 var allCharacters = [];
 var lenght = [];
 var finalPassword = [];
+var lowercase = [];
+var upercase = [];
+var numbers = [];
+var specialChar = [];
 
 
 
@@ -45,26 +49,32 @@ function generatePassword() {
 
 
 function criteria () {
-    const lowercase = confirm ("Click 'OK' if you would like to include lowercase in your password");
+    lowercase = confirm ("Click 'OK' if you would like to include lowercase in your password");
     if (lowercase) {
       allCharacters.push ("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
       console.log(allCharacters);
     }
-    const upercase = confirm ("Click 'OK' if you would to include upercase in your password");
+    upercase = confirm ("Click 'OK' if you would to include upercase in your password");
     if (upercase) {
       allCharacters.push ("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
       console.log(allCharacters);
     }
-    const numbers = confirm ("Click 'OK' if you would to include numbers in your password");
+    numbers = confirm ("Click 'OK' if you would to include numbers in your password");
     if (numbers) {
       allCharacters.push (0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
       console.log (allCharacters);
     }
-    const specialChar = confirm ("Click 'OK' if you would to include special characters in your password");
+    specialChar = confirm ("Click 'OK' if you would to include special characters in your password");
     if (specialChar) {
       allCharacters.push ('!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '_', '`', '{', '|', '}', '~');
       console.log(allCharacters);
     }
+
+ 
+    // if (allCharacters = []) {
+    //   alert ("You need to choose at least one criteria to generate a password. Please select 'Generate Password' again.");
+    //   return;
+    // }
 
       shuffle(allCharacters);
       console.log(allCharacters);
