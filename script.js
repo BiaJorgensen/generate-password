@@ -1,6 +1,11 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+// Global variables
+var allCharacters = [];
+var a = [];
+
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -13,8 +18,7 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-var testing = [];
-var a = [];
+
 
 function generatePassword() {
     a = prompt ("Choose a password lenght from 8 to 128 characters");
@@ -39,34 +43,41 @@ function generatePassword() {
 function criteria () {
     const b = confirm ("Click 'OK' if you would like to include lowercase in your password");
     if (b) {
-      testing.push ("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
-      console.log(testing);
+      allCharacters.push ("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
+      console.log(allCharacters);
     }
     const c = confirm ("Click 'OK' if you would to include upercase in your password");
     if (c) {
-      testing.push ("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
-      console.log(testing);
+      allCharacters.push ("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
+      console.log(allCharacters);
     }
     const d = confirm ("Click 'OK' if you would to include numbers in your password");
     if (d) {
-      testing.push (0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
-      console.log (testing);
+      allCharacters.push (0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+      console.log (allCharacters);
     }
     const e = confirm ("Click 'OK' if you would to include special characters in your password");
     if (e) {
-      testing.push ('!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '_', '`', '{', '|', '}', '~');
-      console.log(testing);
+      allCharacters.push ('!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '_', '`', '{', '|', '}', '~');
+      console.log(allCharacters);
     }
-    shuffle(testing);
-    console.log(testing);
-    testing = [];
-    console.log(testing);
+
+      shuffle(allCharacters);
+      console.log(allCharacters);
+    // testing.slice (0,4);
+    console.log(allCharacters.slice(0,a));
+    
+    
+
+    allCharacters = [];
+    console.log(allCharacters);
   }
 
-  function shuffle(testing) {
-    testing.sort(() => Math.random() - 0.5);
+  function shuffle(allCharacters) {
+    allCharacters.sort(() => Math.random() - 0.5);
   }
  
+
   
 
  
