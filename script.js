@@ -12,6 +12,9 @@ var finalPassword = [];
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
+  passwordText = {
+    value: finalPassword,
+  }
 
   passwordText.value = password;
 
@@ -69,9 +72,8 @@ function criteria () {
       finalPassword = allCharacters.slice(0,a);
       finalPassword = finalPassword.join("")
       console.log(finalPassword);
-    
-    
-
+      document.getElementById("password").innerHTML = finalPassword;
+ 
     allCharacters = [];
     console.log(allCharacters);
   }
