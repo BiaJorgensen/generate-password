@@ -4,6 +4,8 @@ var generateBtn = document.querySelector("#generate");
 // Global variables
 var allCharacters = [];
 var a = [];
+var finalPassword = [];
+
 
 
 // Write password to the #password input
@@ -64,8 +66,9 @@ function criteria () {
 
       shuffle(allCharacters);
       console.log(allCharacters);
-    // testing.slice (0,4);
-    console.log(allCharacters.slice(0,a));
+      finalPassword = allCharacters.slice(0,a);
+      finalPassword = finalPassword.join("")
+      console.log(finalPassword);
     
     
 
