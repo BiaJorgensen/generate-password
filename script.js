@@ -76,7 +76,7 @@ function criteria () {
     //   return;
     // }
 
-      shuffle(allCharacters);
+      shuffle();
       console.log(allCharacters);
       finalPassword = allCharacters.slice(0,lenght);
       finalPassword = finalPassword.join("")
@@ -87,7 +87,7 @@ function criteria () {
     console.log(allCharacters);
   }
 
-  function shuffle(allCharacters) {
+  function shuffle() {
     allCharacters.sort(() => Math.random() - 0.5);
   }
  
