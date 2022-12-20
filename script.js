@@ -30,10 +30,14 @@ function generatePassword() {
   allCharacters = [];
   var lenght = passwordLenght ();
   var possibleCharacters = criteria ();
+  var finalPassword = [];
+  for (var i = 0; i < lenght; i++) {
+    finalPassword.push (possibleCharacters [Math.floor(Math.random() * possibleCharacters.lenght)])
 
-  shuffle();
-      console.log(allCharacters);
-      finalPassword = allCharacters.slice(0,lenght);
+  }
+
+ 
+      
       finalPassword = finalPassword.join("")
       console.log(finalPassword);
       document.getElementById("password").innerHTML = finalPassword;
@@ -94,10 +98,7 @@ function criteria () {
       
   }
 
-  function shuffle() {
-    allCharacters.sort(() => Math.random() - 0.5);
-  }
- 
+
 
   
 
