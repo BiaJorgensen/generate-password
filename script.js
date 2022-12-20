@@ -3,12 +3,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Global variables
 var allCharacters = [];
-var lenght = [];
-var finalPassword = [];
-var lowercase = [];
-var upercase = [];
-var numbers = [];
-var specialChar = [];
+
 
 
 
@@ -16,23 +11,21 @@ var specialChar = [];
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-  passwordText = {
-    value: finalPassword,
-  }
+
   passwordText.value = password;
 
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+
 
 function generatePassword() {
   allCharacters = [];
-  var lenght = passwordLenght ();
+  var length = passwordLength ();
   var possibleCharacters = criteria ();
   var finalPassword = [];
-  for (var i = 0; i < lenght; i++) {
-    finalPassword.push (possibleCharacters [Math.floor(Math.random() * possibleCharacters.lenght)])
+  for (i = 0; i < length; i++) {
+   
+    finalPassword.push (possibleCharacters [Math.floor(Math.random() * possibleCharacters.length)])
 
   }
   finalPassword = finalPassword.join("")
@@ -41,43 +34,43 @@ function generatePassword() {
   return finalPassword; 
 }
 
-function passwordLenght() {
-  lenght = prompt ("Choose a password lenght from 8 to 128 characters");
-    console.log(lenght);
-    if (lenght === null) {
+function passwordLength() {
+  var length = prompt ("Choose a password length from 8 to 128 characters");
+    console.log(length);
+    if (length === null) {
       return;
     }
-    else if (lenght<8) {
-      alert ("Please choose a password lenght higher than 8");
+    else if (length<8) {
+      alert ("Please choose a password length higher than 8");
       generatePassword();
     }
-    else if (lenght>128) {
-      alert ("Please choose a password lenght lower than 128");
+    else if (length>128) {
+      alert ("Please choose a password length lower than 128");
       generatePassword();
     }
     else {
-      return lenght;
+      return length;
     }
 }
 
 
 function criteria () {
-    lowercase = confirm ("Click 'OK' if you would like to include lowercase in your password");
+    var lowercase = confirm ("Click 'OK' if you would like to include lowercase in your password");
     if (lowercase) {
       allCharacters.push ("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
       console.log(allCharacters);
     }
-    upercase = confirm ("Click 'OK' if you would to include upercase in your password");
+    var upercase = confirm ("Click 'OK' if you would to include upercase in your password");
     if (upercase) {
       allCharacters.push ("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
       console.log(allCharacters);
     }
-    numbers = confirm ("Click 'OK' if you would to include numbers in your password");
+    var numbers = confirm ("Click 'OK' if you would to include numbers in your password");
     if (numbers) {
       allCharacters.push (0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
       console.log (allCharacters);
     }
-    specialChar = confirm ("Click 'OK' if you would to include special characters in your password");
+    var specialChar = confirm ("Click 'OK' if you would to include special characters in your password");
     if (specialChar) {
       allCharacters.push ('!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', '\\', ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '_', '`', '{', '|', '}', '~');
       console.log(allCharacters);
@@ -94,7 +87,8 @@ function criteria () {
   }
 
 
-
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
   
 
  
