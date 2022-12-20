@@ -27,9 +27,10 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
+  allCharacters = [];
   var lenght = passwordLenght ();
   var possibleCharacters = criteria ();
-  
+
   shuffle();
       console.log(allCharacters);
       finalPassword = allCharacters.slice(0,lenght);
@@ -37,7 +38,7 @@ function generatePassword() {
       console.log(finalPassword);
       document.getElementById("password").innerHTML = finalPassword;
  
-    allCharacters = [];
+    
     console.log(allCharacters);
 }
 
