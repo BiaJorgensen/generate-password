@@ -35,15 +35,10 @@ function generatePassword() {
     finalPassword.push (possibleCharacters [Math.floor(Math.random() * possibleCharacters.lenght)])
 
   }
-
- 
-      
-      finalPassword = finalPassword.join("")
-      console.log(finalPassword);
-      document.getElementById("password").innerHTML = finalPassword;
- 
-    
-    console.log(allCharacters);
+  finalPassword = finalPassword.join("")
+  console.log(finalPassword);
+       
+  return finalPassword; 
 }
 
 function passwordLenght() {
