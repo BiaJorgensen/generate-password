@@ -28,6 +28,17 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
   var lenght = passwordLenght ();
+  var possibleCharacters = criteria ();
+  
+  shuffle();
+      console.log(allCharacters);
+      finalPassword = allCharacters.slice(0,lenght);
+      finalPassword = finalPassword.join("")
+      console.log(finalPassword);
+      document.getElementById("password").innerHTML = finalPassword;
+ 
+    allCharacters = [];
+    console.log(allCharacters);
 }
 
 function passwordLenght() {
@@ -68,9 +79,10 @@ function criteria () {
     }
     specialChar = confirm ("Click 'OK' if you would to include special characters in your password");
     if (specialChar) {
-      allCharacters.push ('!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '_', '`', '{', '|', '}', '~');
+      allCharacters.push ('!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', '\\', ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '_', '`', '{', '|', '}', '~');
       console.log(allCharacters);
     }
+    return allCharacters;
 
  
     // if (allCharacters = []) {
@@ -78,15 +90,7 @@ function criteria () {
     //   return;
     // }
 
-      shuffle();
-      console.log(allCharacters);
-      finalPassword = allCharacters.slice(0,lenght);
-      finalPassword = finalPassword.join("")
-      console.log(finalPassword);
-      document.getElementById("password").innerHTML = finalPassword;
- 
-    allCharacters = [];
-    console.log(allCharacters);
+      
   }
 
   function shuffle() {
