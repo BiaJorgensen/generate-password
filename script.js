@@ -1,5 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var passwordText = document.querySelector("#password");
 
 // Global variables
 var allCharacters = [];
@@ -10,9 +11,10 @@ var allCharacters = [];
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  
 
   passwordText.value = password;
+
   
 }
 
@@ -21,26 +23,29 @@ function writePassword() {
 function generatePassword() {
   allCharacters = [];
   var length = passwordLength ();
-  if (length != null || length === "") {
-  var possibleCharacters = criteria ();
-  var finalPassword = [];
-  for (i = 0; i < length; i++) {
-   
-    finalPassword.push (possibleCharacters [Math.floor(Math.random() * possibleCharacters.length)])
+  while (length != null && length != "") {
+    var possibleCharacters = criteria ();
+    var finalPassword = [];
+    for (i = 0; i < length; i++) {
+    
+      finalPassword.push (possibleCharacters [Math.floor(Math.random() * possibleCharacters.length)])
 
-  }
-  finalPassword = finalPassword.join("")
-  console.log(finalPassword);
-       
-  return finalPassword; 
+    }
+    finalPassword = finalPassword.join("")
+    console.log(finalPassword);
+        
+    return finalPassword; 
 }
+return allCharacters;
 }
+
 
 function passwordLength() {
   var length = prompt ("Choose a password length from 8 to 128 characters");
     console.log(length);
     if (length === null || length === "") {
-      return;
+      
+      return allCharacters;
     }
     else if (length<8) {
       alert ("Please choose a password length higher than 8");
@@ -81,22 +86,11 @@ function criteria () {
       alert ("Please select at least one criteria to generate a password. Please click 'Generate Password' again.")
     }
     return allCharacters;
-
- 
-    // if (allCharacters = []) {
-    //   alert ("You need to choose at least one criteria to generate a password. Please select 'Generate Password' again.");
-    //   return;
-    // }
-
       
   }
 
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword); {
-  allCharacters = []
-}
-  
-
+generateBtn.addEventListener("click", writePassword);
  
 
