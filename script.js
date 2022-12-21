@@ -13,7 +13,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
+  
 }
 
 
@@ -21,6 +21,7 @@ function writePassword() {
 function generatePassword() {
   allCharacters = [];
   var length = passwordLength ();
+  if (length != null) {
   var possibleCharacters = criteria ();
   var finalPassword = [];
   for (i = 0; i < length; i++) {
@@ -32,6 +33,7 @@ function generatePassword() {
   console.log(finalPassword);
        
   return finalPassword; 
+}
 }
 
 function passwordLength() {
@@ -75,6 +77,9 @@ function criteria () {
       allCharacters.push ('!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', '\\', ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '_', '`', '{', '|', '}', '~');
       console.log(allCharacters);
     }
+    if (lowercase != true && upercase != true && numbers != true && specialChar != true) {
+      alert ("Please select at least one criteria to generate a password. Please click 'Generate Password' again.")
+    }
     return allCharacters;
 
  
@@ -88,7 +93,9 @@ function criteria () {
 
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword); {
+  allCharacters = []
+}
   
 
  
