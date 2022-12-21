@@ -21,7 +21,7 @@ function writePassword() {
 function generatePassword() {
   allCharacters = [];
   var length = passwordLength ();
-  if (length != null) {
+  if (length != null || length === "") {
   var possibleCharacters = criteria ();
   var finalPassword = [];
   for (i = 0; i < length; i++) {
@@ -39,7 +39,7 @@ function generatePassword() {
 function passwordLength() {
   var length = prompt ("Choose a password length from 8 to 128 characters");
     console.log(length);
-    if (length === null) {
+    if (length === null || length === "") {
       return;
     }
     else if (length<8) {
