@@ -5,9 +5,10 @@ var generateBtn = document.querySelector("#generate");
 var allCharacters = [];
 
 
+
+
 // Write password to the #password input
 function writePassword() {
-  allCharacters = [];
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
@@ -16,12 +17,11 @@ function writePassword() {
 }
 
 
+
 function generatePassword() {
-  
-  var length = passwordLength();
-  while (length != null) {
-  
-  var possibleCharacters = criteria();
+  allCharacters = [];
+  var length = passwordLength ();
+  var possibleCharacters = criteria ();
   var finalPassword = [];
   for (i = 0; i < length; i++) {
    
@@ -34,34 +34,27 @@ function generatePassword() {
   return finalPassword; 
 }
 
-}
-
 function passwordLength() {
   var length = prompt ("Choose a password length from 8 to 128 characters");
     console.log(length);
-
-    while (length != null) {
-      // if (length === null) {
-      //   return;
-      // }
-       if (length<8) {
-        alert ("Please choose a password length higher than 8");
-        generatePassword();
-      }
-      else if (length>128) {
-        alert ("Please choose a password length lower than 128");
-        generatePassword();
-      }
-      else {
-        return length;
-      }
+    if (length === null) {
+      return;
     }
-   
+    else if (length<8) {
+      alert ("Please choose a password length higher than 8");
+      generatePassword();
+    }
+    else if (length>128) {
+      alert ("Please choose a password length lower than 128");
+      generatePassword();
+    }
+    else {
+      return length;
+    }
 }
 
 
-function criteria() {
-  
+function criteria () {
     var lowercase = confirm ("Click 'OK' if you would like to include lowercase in your password");
     if (lowercase) {
       allCharacters.push ("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
@@ -82,17 +75,13 @@ function criteria() {
       allCharacters.push ('!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', '\\', ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '_', '`', '{', '|', '}', '~');
       console.log(allCharacters);
     }
-    
-    if (lowercase === false && upercase === false && numbers === false && specialChar === false) {
-      alert ("You need to choose at least one criteria to generate a password. Please select 'Generate Password' again.");
-      // criteria();
-    }
-    
-    
     return allCharacters;
-    
+
  
-    
+    // if (allCharacters = []) {
+    //   alert ("You need to choose at least one criteria to generate a password. Please select 'Generate Password' again.");
+    //   return;
+    // }
 
       
   }
