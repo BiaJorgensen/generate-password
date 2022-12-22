@@ -29,7 +29,7 @@ Please refer to the LICENSE in the repo.
 
 ## Link to live website
 
-
+https://biajorgensen.github.io/generate-password/
 
 ## Website preview
 
