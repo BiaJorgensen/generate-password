@@ -18,8 +18,10 @@ function generatePassword() {
   console.log(allCharacters);
 
   var length = passwordLength ();
+  console.log(length);
   //Only generates password if user provides length and/or does not cancel length prompt
   if (length != null && length != "") {
+    console.log(1);
     var possibleCharacters = criteria ();
     var finalPassword = [];
     //Adds random characters to finalPassword using possible characters, one by one up to the length requested by user
@@ -34,6 +36,7 @@ function generatePassword() {
   }
   //Does not generate password if user does not provide length and/or cancels lentgh prompt by returning an empty array to generatePassword()
   else {
+    console.log(2);
     return allCharacters;
   }
 }
@@ -49,10 +52,12 @@ function passwordLength() {
     //Alerts user that lenght provided is lower than minimal length
     else if (length<8) {
       alert ("Please choose a password length higher or equal to 8. Please click 'Generate Password' again.");
+      return length = null;
     }
     //Alerts user that lenght provided is higher than maximum length
     else if (length>128) {
       alert ("Please choose a password length lower or equal to 128. Please click 'Generate Password' again.");
+      return length = null;
     }
     //Length follows minimal and maximum requeriments - Returns length value to passwordLength()
     else {
