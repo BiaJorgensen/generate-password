@@ -23,7 +23,7 @@ function writePassword() {
 function generatePassword() {
   allCharacters = [];
   var length = passwordLength ();
-  while (length != null && length != "") {
+  if (length != null && length != "") {
     var possibleCharacters = criteria ();
     var finalPassword = [];
     for (i = 0; i < length; i++) {
@@ -36,7 +36,10 @@ function generatePassword() {
         
     return finalPassword; 
 }
-return allCharacters;
+else {
+  return allCharacters;
+}
+
 }
 
 
